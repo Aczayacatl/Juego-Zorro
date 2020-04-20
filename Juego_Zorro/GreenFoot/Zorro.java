@@ -1,11 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Zorro here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Zorro extends Actor
 {
     private String[] framesWalkDer = {"ZorroWalk/zorroStillR.png","ZorroWalk/zorro1R.png","ZorroWalk/zorro2R.png","ZorroWalk/zorro3R.png","ZorroWalk/zorro4R.png","ZorroWalk/zorro5R.png"};
@@ -20,7 +14,7 @@ public class Zorro extends Actor
         contadorFrames=0;
         frameStill = 1;
     }
-    public void act() 
+    public void act()
     {
         // Add your action code here.
         /*Animation control*/
@@ -37,18 +31,18 @@ public class Zorro extends Actor
         if(xDirection==1)animacion(framesWalkDer);
         else animacion(framesWalkIzq);
     }
-    
+
     public void animacion(String[] frames){
         if(frameStill == 0){
             if(contadorFrames>=frames.length){
-                 contadorFrames=1;
+                contadorFrames=1;
             }
             setImage(frames[contadorFrames]);
             contadorFrames++;
         }
         if(frameStill == 1){setImage(frames[0]);}
     }
-    
+
     public void control(){
         key = Greenfoot.getKey();
         int x = getX();
